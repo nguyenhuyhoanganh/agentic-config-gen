@@ -1,0 +1,243 @@
+{
+  "devices": [
+    {
+      "id": "device-001",
+      "name": "Core-Router-HN-01",
+      "vendor_id": "juniper-001",
+      "series_id": "juniper-mx",
+      "model": "MX480",
+      "role": "core",
+      "site": "Hanoi-DC1",
+      "management": {
+        "ip": "10.1.1.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.1.1.254",
+        "secondary_ips": []
+      },
+      "credentials": {
+        "username": "admin",
+        "password": "Juniper@Secure!2024",
+        "enable_password": "Juniper@Enable!2024"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "public-ro",
+          "community_write": "private-rw"
+        },
+        "v3": {
+          "enabled": true,
+          "user": "snmpv3user",
+          "auth_protocol": "SHA",
+          "auth_password": "AuthPass123!",
+          "priv_protocol": "AES128",
+          "priv_password": "PrivPass123!"
+        }
+      },
+      "netconf": {
+        "enabled": true,
+        "port": 830
+      },
+      "ssh": {
+        "port": 22
+      }
+    },
+    {
+      "id": "device-002",
+      "name": "Access-Switch-HN-01",
+      "vendor_id": "cisco-001",
+      "series_id": "cisco-catalyst",
+      "model": "Catalyst 9300",
+      "role": "access",
+      "site": "Hanoi-Building-A",
+      "management": {
+        "ip": "10.1.2.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.1.2.254"
+      },
+      "credentials": {
+        "username": "cisco_admin",
+        "password": "Cisco@Secure!2024",
+        "enable_password": "Cisco@Enable!2024"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "cisco-ro-hn"
+        },
+        "v3": {
+          "enabled": true,
+          "user": "snmpv3_cisco",
+          "auth_protocol": "SHA256",
+          "auth_password": "CiscoAuth#1",
+          "priv_protocol": "AES256",
+          "priv_password": "CiscoPriv#1"
+        }
+      },
+      "netconf": {
+        "enabled": true,
+        "port": 830
+      },
+      "ssh": { "port": 22 }
+    },
+    {
+      "id": "device-003",
+      "name": "OLT-DaNang-01",
+      "vendor_id": "ubiquoss-001",
+      "series_id": "ubiquoss-olt",
+      "model": "EP-8032",
+      "role": "olt",
+      "site": "DaNang-CO",
+      "management": {
+        "ip": "10.2.1.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.2.1.254"
+      },
+      "credentials": {
+        "username": "ubiquoss",
+        "password": "Ubiquoss@2024"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "ubiquoss-ro"
+        },
+        "v3": {
+          "enabled": false
+        }
+      },
+      "netconf": {
+        "enabled": true,
+        "port": 830
+      },
+      "ssh": { "port": 22 }
+    },
+    {
+      "id": "device-004",
+      "name": "Edge-Router-HCM-01",
+      "vendor_id": "cisco-001",
+      "series_id": "cisco-ios-xe",
+      "model": "ASR 1002",
+      "role": "edge",
+      "site": "HCM-POP1",
+      "management": {
+        "ip": "10.3.1.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.3.1.254"
+      },
+      "credentials": {
+        "username": "admin",
+        "password": "CiscoASR@2024",
+        "enable_password": "CiscoASR@Enable"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "asr-hcm-ro"
+        },
+        "v3": {
+          "enabled": true,
+          "user": "snmp_asr",
+          "auth_protocol": "SHA",
+          "auth_password": "ASR_Auth_Secret",
+          "priv_protocol": "AES128",
+          "priv_password": "ASR_Priv_Secret"
+        }
+      },
+      "netconf": { "enabled": true, "port": 830 },
+      "ssh": { "port": 22 }
+    },
+    {
+      "id": "device-005",
+      "name": "Firewall-SRX-HN",
+      "vendor_id": "juniper-001",
+      "series_id": "juniper-srx",
+      "model": "SRX380",
+      "role": "firewall",
+      "site": "Hanoi-DC1",
+      "management": {
+        "ip": "10.1.1.2",
+        "netmask": "255.255.255.0",
+        "gateway": "10.1.1.254"
+      },
+      "credentials": {
+        "username": "fw_admin",
+        "password": "SRX@Secure!2024"
+      },
+      "snmp": {
+        "v2": { "enabled": false },
+        "v3": {
+          "enabled": true,
+          "user": "srx_snmp",
+          "auth_protocol": "SHA",
+          "auth_password": "SRX_Snmp_Auth",
+          "priv_protocol": "AES128",
+          "priv_password": "SRX_Snmp_Priv"
+        }
+      },
+      "netconf": { "enabled": true, "port": 830 },
+      "ssh": { "port": 22 }
+    },
+    {
+      "id": "device-006",
+      "name": "HDN-Switch-Backbone",
+      "vendor_id": "hdn-001",
+      "series_id": "hdn-switch",
+      "model": "HDN-SW-48",
+      "role": "distribution",
+      "site": "Hanoi-Building-B",
+      "management": {
+        "ip": "10.1.4.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.1.4.254"
+      },
+      "credentials": {
+        "username": "hdn_admin",
+        "password": "HDN@Switch2024"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "hdn-backbone"
+        },
+        "v3": { "enabled": false }
+      },
+      "netconf": { "enabled": true, "port": 830 },
+      "ssh": { "port": 22 }
+    },
+    {
+      "id": "device-007",
+      "name": "Samsung-Exalink-Agg",
+      "vendor_id": "samsung-001",
+      "series_id": "samsung-exalink",
+      "model": "EX-6210",
+      "role": "aggregation",
+      "site": "HCM-DC",
+      "management": {
+        "ip": "10.3.2.1",
+        "netmask": "255.255.255.0",
+        "gateway": "10.3.2.254"
+      },
+      "credentials": {
+        "username": "samsung_net",
+        "password": "Samsung@Exalink2024"
+      },
+      "snmp": {
+        "v2": {
+          "enabled": true,
+          "community": "samsung-ex-ro"
+        },
+        "v3": {
+          "enabled": true,
+          "user": "samsung_snmp",
+          "auth_protocol": "MD5",
+          "auth_password": "SamsungAuth",
+          "priv_protocol": "DES",
+          "priv_password": "SamsungPriv"
+        }
+      },
+      "netconf": { "enabled": true, "port": 830 },
+      "ssh": { "port": 22 }
+    }
+  ]
+}

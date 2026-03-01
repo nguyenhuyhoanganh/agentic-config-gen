@@ -1,0 +1,4 @@
+{# Juniper SRX - Config syslog #}
+{% for s in server_list %}
+set system syslog host {{ s.host }} {{ s.facility }} {{ s.level }}
+{% endfor %}

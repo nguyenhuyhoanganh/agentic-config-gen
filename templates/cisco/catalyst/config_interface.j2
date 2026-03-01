@@ -1,0 +1,13 @@
+{# Cisco Catalyst - Config interface #}
+interface {{ interface_name }}
+ description {{ description }}
+{% if mode == 'trunk' %}
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+{% if allowed_vlans %}
+ switchport trunk allowed vlan {{ allowed_vlans }}
+{% endif %}
+{% else %}
+ switchport mode access
+ switchport access vlan {{ access_vlan }}
+{% endif %}

@@ -1,0 +1,5 @@
+{# Juniper MX - Config syslog (apply via terminal)
+   Variables: server_list = [ { host, facility, level }, ... ] #}
+{% for s in server_list %}
+set system syslog host {{ s.host }} {{ s.facility }} {{ s.level }}
+{% endfor %}

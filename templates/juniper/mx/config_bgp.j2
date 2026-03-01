@@ -1,0 +1,8 @@
+{# Juniper MX - Config BGP (apply via terminal)
+   Variables: local_as, neighbor_list = [ { address, remote_as }, ... ] #}
+set protocols bgp group external type external
+set protocols bgp group external local-as {{ local_as }}
+{% for n in neighbor_list %}
+set protocols bgp group external neighbor {{ n.address }} peer-as {{ n.remote_as }}
+{% endfor %}
+set protocols bgp group external family inet unicast

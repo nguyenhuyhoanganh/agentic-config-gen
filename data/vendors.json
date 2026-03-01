@@ -1,0 +1,104 @@
+{
+  "vendors": [
+    {
+      "id": "samsung-001",
+      "name": "Samsung",
+      "description": "Samsung Networks - Telecom & Enterprise",
+      "series": [
+        {
+          "id": "samsung-exalink",
+          "name": "Exalink",
+          "models": ["EX-4210", "EX-5210", "EX-6210", "EX-8210"]
+        },
+        {
+          "id": "samsung-lte",
+          "name": "LTE eNodeB",
+          "models": ["LTE-A Pro", "LTE-A", "LTE-Advanced"]
+        }
+      ]
+    },
+    {
+      "id": "juniper-001",
+      "name": "Juniper",
+      "description": "Juniper Networks - Routing, Switching, Security",
+      "series": [
+        {
+          "id": "juniper-mx",
+          "name": "MX Series",
+          "models": ["MX204", "MX480", "MX960", "MX10008", "MX10016"]
+        },
+        {
+          "id": "juniper-ex",
+          "name": "EX Series",
+          "models": ["EX2300", "EX3400", "EX4300", "EX4600", "EX9200"]
+        },
+        {
+          "id": "juniper-qfx",
+          "name": "QFX Series",
+          "models": ["QFX5100", "QFX5200", "QFX10002", "QFX10008"]
+        },
+        {
+          "id": "juniper-srx",
+          "name": "SRX Series",
+          "models": ["SRX300", "SRX320", "SRX340", "SRX380", "SRX1500"]
+        }
+      ]
+    },
+    {
+      "id": "cisco-001",
+      "name": "Cisco",
+      "description": "Cisco Systems - Enterprise & Service Provider",
+      "series": [
+        {
+          "id": "cisco-catalyst",
+          "name": "Catalyst",
+          "models": ["Catalyst 9200", "Catalyst 9300", "Catalyst 9400", "Catalyst 9500", "Catalyst 9600"]
+        },
+        {
+          "id": "cisco-ios-xe",
+          "name": "IOS-XE (ISR/ASR)",
+          "models": ["ISR 4321", "ISR 4331", "ASR 1001", "ASR 1002", "ASR 1006"]
+        },
+        {
+          "id": "cisco-nexus",
+          "name": "Nexus",
+          "models": ["Nexus 93180", "Nexus 9336C", "Nexus 9508", "Nexus 9636C"]
+        }
+      ]
+    },
+    {
+      "id": "hdn-001",
+      "name": "HDN",
+      "description": "HDN - Network Equipment",
+      "series": [
+        {
+          "id": "hdn-switch",
+          "name": "Switch Series",
+          "models": ["HDN-SW-24", "HDN-SW-48", "HDN-SW-96"]
+        },
+        {
+        "id": "hdn-router",
+          "name": "Router Series",
+          "models": ["HDN-RT-1000", "HDN-RT-2000", "HDN-RT-5000"]
+        }
+      ]
+    },
+    {
+      "id": "ubiquoss-001",
+      "name": "Ubiquoss",
+      "description": "Ubiquoss - OLT/GPON/EPON Solutions",
+      "series": [
+        {
+          "id": "ubiquoss-olt",
+          "name": "OLT Series",
+          "models": ["EP-8032", "EP-8064", "GP-8032", "GP-8064", "HF-8032"]
+        },
+        {
+          "id": "ubiquoss-onu",
+          "name": "ONU Series",
+          "models": ["EP-ONU-1GE", "EP-ONU-2GE", "GP-ONU-1GE", "GP-ONU-10GE"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{# Juniper MX - Config interface (apply via terminal)
+   Variables: interface_name, description, unit, address #}
+set interfaces {{ interface_name }} description "{{ description }}"
+set interfaces {{ interface_name }} unit {{ unit }} family inet address {{ address }}

@@ -1,0 +1,4 @@
+{# Cisco IOS-XE - Config SNMP #}
+snmp-server community {{ community_ro }} RO
+{% if location %}snmp-server location {{ location }}{% endif %}
+{% if contact %}snmp-server contact {{ contact }}{% endif %}

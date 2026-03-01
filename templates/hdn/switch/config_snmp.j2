@@ -1,0 +1,3 @@
+{# HDN Switch - Config SNMP #}
+snmp-server community {{ community_ro }} ro
+{% if location %}snmp-server location {{ location }}{% endif %}

@@ -1,0 +1,6 @@
+{# Juniper MX - Add VLAN (apply via terminal)
+   Variables: vlans = [ { vlan_id, name }, ... ] #}
+set vlans {{ vlans[0].name }} vlan-id {{ vlans[0].vlan_id }}
+{% for v in vlans[1:] %}
+set vlans {{ v.name }} vlan-id {{ v.vlan_id }}
+{% endfor %}

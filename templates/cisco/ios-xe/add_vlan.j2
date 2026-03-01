@@ -1,0 +1,4 @@
+{# Cisco IOS-XE (ISR/ASR) - Add VLAN (subinterface / dot1q) #}
+interface {{ interface_name }}.{{ vlan_id }}
+ encapsulation dot1Q {{ vlan_id }}
+ ip address {{ address }} {{ mask }}

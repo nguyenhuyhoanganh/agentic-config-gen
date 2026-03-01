@@ -1,0 +1,3 @@
+{# Samsung Exalink - Config SNMP #}
+snmp community {{ community_ro }} read-only
+{% if location %}snmp location {{ location }}{% endif %}

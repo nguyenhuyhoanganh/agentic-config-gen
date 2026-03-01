@@ -1,0 +1,39 @@
+{
+  "configs": {
+    "device-001": {
+      "device_id": "device-001",
+      "hostname": "Core-Router-HN-01",
+      "content": "## Juniper MX480 - Running Configuration\nversion 18.4R3.8;\nsystem {\n  hostname Core-Router-HN-01;\n  root-authentication {\n    encrypted-password \"$6$xxx\";\n  }\n  services {\n    ssh;\n    netconf {\n      ssh;\n    }\n  }\n  syslog {\n    host 10.1.1.100 {\n      any emergency;\n    }\n  }\n}\ninterfaces {\n  xe-0/0/0 {\n    description \"Uplink to PE\";\n    unit 0 {\n      family inet {\n        address 192.168.1.1/30;\n      }\n    }\n  }\n  xe-0/0/1 {\n    description \"To Firewall\";\n    unit 0 {\n      family inet {\n        address 10.1.1.10/24;\n      }\n    }\n  }\n  em0 {\n    unit 0 {\n      family inet {\n        address 10.1.1.1/24;\n      }\n    }\n  }\n}\nprotocols {\n  ospf {\n    area 0.0.0.0 {\n      interface xe-0/0/0.0;\n      interface xe-0/0/1.0;\n      interface em0.0 {\n        passive;\n      }\n    }\n  }\n}\nsnmp {\n  community public-ro {\n    authorization read-only;\n  }\n  community private-rw {\n    authorization read-write;\n  }\n}\n"
+    },
+    "device-002": {
+      "device_id": "device-002",
+      "hostname": "Access-Switch-HN-01",
+      "content": "! Cisco Catalyst 9300 - Running Configuration\nversion 17.9.4\nhostname Access-Switch-HN-01\nno aaa new-model\nip domain-name company.local\nip ssh version 2\ninterface GigabitEthernet1/0/1\n description Uplink to Core\n switchport trunk encapsulation dot1q\n switchport mode trunk\n!\ninterface GigabitEthernet1/0/2-24\n switchport access vlan 10\n switchport mode access\n!\ninterface Vlan1\n ip address 10.1.2.1 255.255.255.0\n!\nip default-gateway 10.1.2.254\nsnmp-server community cisco-ro-hn RO\nsnmp-server community cisco-rw RW\nline vty 0 4\n transport input ssh\n login local\n!"
+    },
+    "device-003": {
+      "device_id": "device-003",
+      "hostname": "OLT-DaNang-01",
+      "content": "! Ubiquoss EP-8032 OLT - Running Configuration\nhostname OLT-DaNang-01\n!\nmanagement-ip 10.2.1.1 255.255.255.0 10.2.1.254\n!\nuser ubiquoss password encrypted xxx\n!\nsnmp-server community ubiquoss-ro ro\n!\ninterface eth 0/1\n description NNI-Uplink\n!\ninterface pon 0/1\n ont 1 serial-number SN12345678\n ont 2 serial-number SN12345679\n!\n!"
+    },
+    "device-004": {
+      "device_id": "device-004",
+      "hostname": "Edge-Router-HCM-01",
+      "content": "! Cisco ASR 1002 - IOS-XE Running Configuration\nversion 17.9.4\nhostname Edge-Router-HCM-01\nip domain name company.local\nip ssh version 2\n!\ninterface GigabitEthernet0/0/0\n description WAN-Primary\n ip address 203.0.113.1 255.255.255.252\n!\ninterface GigabitEthernet0/0/1\n description LAN\n ip address 10.3.1.1 255.255.255.0\n!\nrouter ospf 1\n router-id 10.3.1.1\n network 10.3.1.0 0.0.0.255 area 0\n!\nip route 0.0.0.0 0.0.0.0 203.0.113.2\nsnmp-server community asr-hcm-ro ro\nsnmp-server user snmp_asr auth sha ASR_Auth_Secret priv aes 128 ASR_Priv_Secret\n!"
+    },
+    "device-005": {
+      "device_id": "device-005",
+      "hostname": "Firewall-SRX-HN",
+      "content": "## Juniper SRX380 - Running Configuration\nversion 21.4R3;\nsystem {\n  hostname Firewall-SRX-HN;\n  services {\n    ssh;\n    netconf {\n      ssh;\n    }\n  }\n}\ninterfaces {\n  ge-0/0/0 {\n    unit 0 {\n      family inet {\n        address 10.1.1.2/24;\n      }\n    }\n  }\n  ge-0/0/1 {\n    unit 0 {\n      family inet {\n        address 192.168.100.1/24;\n      }\n    }\n  }\n}\nsecurity {\n  zones {\n    security-zone trust {\n      interfaces ge-0/0/1.0;\n    }\n    security-zone untrust {\n      interfaces ge-0/0/0.0;\n    }\n  }\n}\n"
+    },
+    "device-006": {
+      "device_id": "device-006",
+      "hostname": "HDN-Switch-Backbone",
+      "content": "! HDN-SW-48 - Running Configuration\nhostname HDN-Switch-Backbone\n!\ninterface vlan 1\n ip address 10.1.4.1 255.255.255.0\n!\nip default-gateway 10.1.4.254\n!\nvlan 10\n name Users\nvlan 20\n name Servers\n!\ninterface range gigabitEthernet 1/0/1-2\n switchport mode trunk\n!\ninterface range gigabitEthernet 1/0/3-24\n switchport access vlan 10\n!\nsnmp-server community hdn-backbone ro\n!"
+    },
+    "device-007": {
+      "device_id": "device-007",
+      "hostname": "Samsung-Exalink-Agg",
+      "content": "! Samsung EX-6210 - Running Configuration\nhostname Samsung-Exalink-Agg\n!\nmanagement ip 10.3.2.1 255.255.255.0 10.3.2.254\n!\ninterface ethernet 0/1\n description Uplink-Core\n mode trunk\n!\ninterface ethernet 0/2-24\n vlan 10\n mode access\n!\nsnmp-server community samsung-ex-ro read-only\n!"
+  }
+  }
+}

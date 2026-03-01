@@ -1,0 +1,6 @@
+{# Juniper EX - Config interface (access/trunk) #}
+set interfaces {{ interface_name }} description "{{ description }}"
+set interfaces {{ interface_name }} unit 0 family ethernet-switching interface-mode {{ mode }}
+{% if mode == 'access' and vlan %}
+set interfaces {{ interface_name }} unit 0 family ethernet-switching vlan members {{ vlan }}
+{% endif %}

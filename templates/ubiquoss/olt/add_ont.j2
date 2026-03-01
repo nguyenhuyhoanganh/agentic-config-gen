@@ -1,0 +1,4 @@
+{# Ubiquoss OLT - Add/Register ONU (apply via terminal) #}
+interface pon {{ pon_port }}
+ ont {{ ont_id }} serial-number {{ serial_number }}
+{% if description %} ont {{ ont_id }} description {{ description }}{% endif %}

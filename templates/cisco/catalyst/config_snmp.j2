@@ -1,0 +1,11 @@
+{# Cisco Catalyst - Config SNMP #}
+snmp-server community {{ community_ro }} RO
+{% if community_rw %}
+snmp-server community {{ community_rw }} RW
+{% endif %}
+{% if location %}
+snmp-server location {{ location }}
+{% endif %}
+{% if contact %}
+snmp-server contact {{ contact }}
+{% endif %}

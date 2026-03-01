@@ -1,0 +1,4 @@
+{# Samsung Exalink - Config syslog #}
+{% for s in server_list %}
+logging host {{ s.host }} {{ s.facility }}
+{% endfor %}

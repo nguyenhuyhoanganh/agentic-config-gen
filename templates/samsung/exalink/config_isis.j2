@@ -1,0 +1,6 @@
+{# Samsung Exalink - Config IS-IS #}
+router isis {{ tag }}
+ net {{ net }}
+{% for iface in interface_list %}
+ interface {{ iface }}
+{% endfor %}

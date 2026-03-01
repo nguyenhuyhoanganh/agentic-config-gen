@@ -1,0 +1,4 @@
+{# Samsung Exalink - Config NTP #}
+{% for server in server_list %}
+ntp server {{ server }}
+{% endfor %}

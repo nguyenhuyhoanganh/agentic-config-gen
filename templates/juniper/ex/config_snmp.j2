@@ -1,0 +1,4 @@
+{# Juniper EX - Config SNMP #}
+set snmp community {{ community_ro }} authorization read-only
+{% if community_rw %}set snmp community {{ community_rw }} authorization read-write{% endif %}
+{% if location %}set snmp location "{{ location }}"{% endif %}

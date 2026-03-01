@@ -1,0 +1,4 @@
+{# Juniper SRX - Config NTP #}
+{% for server in server_list %}
+set system ntp server {{ server }}
+{% endfor %}

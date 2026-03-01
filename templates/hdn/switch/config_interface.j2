@@ -1,0 +1,5 @@
+{# HDN Switch - Config interface #}
+interface {{ interface_name }}
+ description {{ description }}
+ switchport mode {{ mode }}
+{% if vlan %}switchport access vlan {{ vlan }}{% endif %}

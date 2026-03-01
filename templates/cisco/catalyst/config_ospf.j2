@@ -1,0 +1,6 @@
+{# Cisco Catalyst - Config OSPF #}
+router ospf {{ process_id }}
+ router-id {{ router_id }}
+{% for net in network_list %}
+ network {{ net.prefix }} {{ net.wildcard }} area {{ net.area }}
+{% endfor %}

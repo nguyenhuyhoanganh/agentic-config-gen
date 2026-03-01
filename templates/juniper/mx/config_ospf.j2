@@ -1,0 +1,11 @@
+{# Juniper MX - Config OSPF (apply via terminal)
+   Variables: area, interface_list, passive_interfaces (optional) #}
+set protocols ospf area {{ area }} interface all
+{% for iface in interface_list %}
+set protocols ospf area {{ area }} interface {{ iface }}
+{% endfor %}
+{% if passive_interfaces %}
+{% for iface in passive_interfaces %}
+set protocols ospf area {{ area }} interface {{ iface }} passive
+{% endfor %}
+{% endif %}

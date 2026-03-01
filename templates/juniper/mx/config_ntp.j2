@@ -1,0 +1,5 @@
+{# Juniper MX - Config NTP (apply via terminal)
+   Variables: server_list = [ "ip1", "ip2" ] #}
+{% for server in server_list %}
+set system ntp server {{ server }}
+{% endfor %}

@@ -1,0 +1,5 @@
+{# Samsung Exalink - Config OSPF #}
+router ospf {{ process_id }}
+{% for net in network_list %}
+ network {{ net.prefix }} area {{ net.area }}
+{% endfor %}

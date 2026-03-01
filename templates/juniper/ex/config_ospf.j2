@@ -1,0 +1,5 @@
+{# Juniper EX - Config OSPF #}
+set protocols ospf area {{ area }} interface all
+{% for iface in interface_list %}
+set protocols ospf area {{ area }} interface {{ iface }}
+{% endfor %}

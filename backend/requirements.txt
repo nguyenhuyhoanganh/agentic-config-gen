@@ -1,0 +1,6 @@
+# Backend API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Agents + tools (install from project root or use parent requirements)
+# Run from project root: pip install -r requirements.txt && pip install -r backend/requirements.txt

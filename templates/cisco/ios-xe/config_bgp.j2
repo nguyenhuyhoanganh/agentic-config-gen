@@ -1,0 +1,11 @@
+{# Cisco IOS-XE - Config BGP #}
+router bgp {{ local_as }}
+ bgp router-id {{ router_id }}
+{% for n in neighbor_list %}
+ neighbor {{ n.address }} remote-as {{ n.remote_as }}
+{% endfor %}
+ address-family ipv4 unicast
+{% for n in neighbor_list %}
+  neighbor {{ n.address }} activate
+{% endfor %}
+ exit-address-family

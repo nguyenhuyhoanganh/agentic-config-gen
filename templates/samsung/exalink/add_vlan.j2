@@ -1,0 +1,5 @@
+{# Samsung Exalink - Add VLAN (apply via terminal) #}
+vlan {{ vlans[0].vlan_id }} name {{ vlans[0].name }}
+{% for v in vlans[1:] %}
+vlan {{ v.vlan_id }} name {{ v.name }}
+{% endfor %}

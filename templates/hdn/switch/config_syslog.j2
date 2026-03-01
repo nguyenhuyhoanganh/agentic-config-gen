@@ -1,0 +1,4 @@
+{# HDN Switch - Config syslog #}
+{% for s in server_list %}
+logging host {{ s.host }}
+{% endfor %}

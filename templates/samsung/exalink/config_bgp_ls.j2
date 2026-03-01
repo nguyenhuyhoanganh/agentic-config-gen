@@ -1,0 +1,5 @@
+{# Samsung Exalink - Config BGP-LS #}
+router bgp {{ local_as }}
+ neighbor {{ peer_address }} remote-as {{ peer_as }}
+ address-family link-state link-state
+  neighbor {{ peer_address }} activate

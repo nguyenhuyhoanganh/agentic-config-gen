@@ -1,0 +1,5 @@
+{# Juniper EX - Config BGP-LS #}
+set protocols bgp group bgp-ls type internal
+set protocols bgp group bgp-ls local-address {{ local_address }}
+set protocols bgp group bgp-ls neighbor {{ peer_address }} peer-as {{ peer_as }}
+set protocols bgp group bgp-ls family link-state

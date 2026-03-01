@@ -1,0 +1,5 @@
+{# Juniper SRX - Config IS-IS #}
+set protocols isis net {{ net }}
+{% for iface in interface_list %}
+set protocols isis interface {{ iface }}
+{% endfor %}

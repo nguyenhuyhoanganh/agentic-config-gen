@@ -1,0 +1,5 @@
+{# Cisco Catalyst - Config syslog #}
+logging host {{ server_list[0].host }}
+{% for s in server_list[1:] %}
+logging host {{ s.host }}
+{% endfor %}
